@@ -16,7 +16,7 @@ def show_account(request):
             # creates user account
             user = User.objects.create_user(username=username,password=password,email=email)
             # creates customer account
-            customer = Customer.objects.create(user=user,address=address,phone=phone)
+            customer = Customer.objects.create(name=username,user=user,address=address,phone=phone)
             success_message = 'Account created successfully!'
             messages.success(request, success_message)
             context['register'] = True
